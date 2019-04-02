@@ -1,6 +1,6 @@
 # Miles Per Year
 
-Make the used car search easier by adding a "miles per year" field on inidividual listings.
+🚗💨 Make used-car searching easier by adding a "miles per year" field to listings
 
 **Works on**:
 

@@ -1,7 +1,7 @@
 {
 "manifest_version": 2,
     "name": "Miles Per Year",
-    "description": "Make the used car search easier by adding a \"miles per year\" field on inidividual listings.",
+    "description": "Make used-car searching easier by adding a \"miles per year\" field to listings",
     "version": "0.1",
     "content_scripts": [
         {

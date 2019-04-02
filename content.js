@@ -17,15 +17,15 @@ function createTag(milesPerYear) {
     return tag
 }
 
-function autotrader() {
-    // Adding miles per year on AutoTrader
-    // Remove
+function removeOldTags() {
     Array.from(document.querySelectorAll('span.miles-per-year')).forEach(
         function(element) {
             element.parentNode.removeChild(element)
         }
     )
+}
 
+function autotrader() {
     Array.from(document.querySelectorAll('div.inventory-listing-body')).forEach(
         function(card) {
             // AGE
@@ -51,4 +51,14 @@ function autotrader() {
             }
         }
     )
+}
+
+var hostMap = {
+    'www.autotrader.com': autotrader
+}
+
+if (hostMap.hasOwnProperty(location.host)) {
+    console.log(`Adding miles per year tag on: ${location.host}`)
+    removeOldTags()
+    hostMap[location.host]()
 }

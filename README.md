@@ -4,7 +4,8 @@
 
 **Works on**:
 
-- AutoTrader
+- AutoTrader.com
+- Cars.com
 
 ---
 

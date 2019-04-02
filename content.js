@@ -1,12 +1,19 @@
 function createTag(milesPerYear) {
+    var average = 13500
     var tag = document.createElement('span')
-    tag.classList.add('miles-per-year')
     var color = '#F44336'
-    if (milesPerYear > 0 && milesPerYear < 10000) {
+    var className = 'CX-miles-per-year__high'
+    if (milesPerYear > 0 && milesPerYear < average - 2000) {
         color = '#4CAF50'
-    } else if (milesPerYear >= 10000 && milesPerYear <= 14000) {
+        className = 'CX-miles-per-year__low'
+    } else if (
+        milesPerYear >= average - 2000 &&
+        milesPerYear <= average + 2000
+    ) {
         color = '#FF9800'
+        className = 'CX-miles-per-year__average'
     }
+    tag.classList.add('CX-miles-per-year', className)
     tag.style.backgroundColor = color
     tag.style.color = 'white'
     tag.style.padding = '2px 4px'
@@ -18,7 +25,7 @@ function createTag(milesPerYear) {
 }
 
 function removeOldTags() {
-    Array.from(document.querySelectorAll('span.miles-per-year')).forEach(
+    Array.from(document.querySelectorAll('span.CX-miles-per-year')).forEach(
         function(element) {
             element.parentNode.removeChild(element)
         }
@@ -86,7 +93,9 @@ var hostMap = {
 var host = location.host
 
 if (hostMap.hasOwnProperty(host)) {
-    console.log(`Adding miles per year tag on: ${host.slice(host.indexOf('.') + 1)}`)
+    console.log(
+        `Adding miles per year tag on: ${host.slice(host.indexOf('.') + 1)}`
+    )
     removeOldTags()
     hostMap[host]()
 }

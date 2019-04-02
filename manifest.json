@@ -6,7 +6,7 @@
     "content_scripts": [
         {
             "matches": [
-                "*://*/*"
+                "*://*.autotrader.com/cars-for-sale/*"
             ],
             "js": [
                 "content.js"
